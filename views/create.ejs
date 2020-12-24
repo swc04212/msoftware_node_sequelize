@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>게시판</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <style>
+    ul {
+      width: 50%;
+      overflow: auto;
+      min-height: 30px;
+      border: 1px solid black;
+    }
+    ul > li{
+      float: left;
+      line-height: 30px;
+      text-align: center;
+      list-style: none;
+      width: 30%;
+      margin-left: 10px;
+    }
+    input{
+      width: 60%;
+    }
+  </style>
+  <body>
+    <h1>게시판</h1>
+
+    <h2>등록</h2>
+    <form action="/create" method="post">
+      <ul>
+        <li>
+          제목 : <input type="text" name="title">
+        </li>
+        <li>
+          내용 : <input type="text" name="text">
+        </li>
+        <li>
+          <button type="submit" class="btn btn-primary">등록</button>
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

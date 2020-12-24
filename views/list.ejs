@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>게시판</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <style>
+    ul {
+      width: 800px;
+      overflow: auto;
+      min-height: 30px;
+      border: 1px solid black;
+    }
+    ul > li{
+      width: 200px;
+      float: left;
+      line-height: 30px;
+      text-align: center;
+      list-style: none;
+    }
+
+
+    #btn_create{
+      display: block;
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border: 1px solid black;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+  </style>
+  <body>
+    <h1>게시판</h1>
+
+    <ul id="title">
+      <li>번호</li>
+      <li>제목</li>
+      <li>내용</li>
+      <li>등록일시</li>
+    </ul>
+    <ul>
+      <% for (var i = 0;i < data.length;i++){ %> 
+        <li><%=data[i].id%></li>
+        <li><%=data[i].title%></li>
+        <li><%=data[i].text%></li>
+        <li><%=moment(data[i].createdAt).format('YYYY-MM-DD')%></li>
+    <% } %>
+    </ul>
+
+    <a id="btn_create" href="/create" class="btn btn-info">등록</a>
+   
+
+  </body>
+</html>
